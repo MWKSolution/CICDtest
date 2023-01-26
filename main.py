@@ -1,7 +1,5 @@
-print('Hello CICD')
+print("Hello CICD")
 
 
-
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     pass
