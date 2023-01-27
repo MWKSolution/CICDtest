@@ -33,7 +33,7 @@ repos:
     rev: v2.16.0b0
     hooks:
     -   id : pylint
-        args: [--ignored-modules=yaml]
+        args: ["--ignored-modules=yaml,dotenv,PyYAML"]
 -   repo: https://github.com/charliermarsh/ruff-pre-commit.git
     rev: v0.0.236
     hooks:
