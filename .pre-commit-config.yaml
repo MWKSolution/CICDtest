@@ -15,6 +15,11 @@ repos:
     rev: v2.16.0b0
     hooks:
     -   id : pylint
+        args: [--ignored-modules=yaml]
+-   repo: https://github.com/charliermarsh/ruff-pre-commit.git
+    rev: v0.0.236
+    hooks:
+    -   id: ruff
 -   repo: https://github.com/psf/black
     rev: 22.12.0
     hooks:
@@ -23,6 +28,7 @@ repos:
     rev: v0.991
     hooks:
     -   id: mypy
+        additional_dependencies: [types-PyYAML==6.0.12.3]
 -   repo: https://github.com/PyCQA/bandit.git
     rev: 1.7.4
     hooks:

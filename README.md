@@ -6,6 +6,8 @@
 [![Checked with mypy](https://www.mypy-lang.org/static/mypy_badge.svg)](https://mypy-lang.org/)
 [![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
 
+---
+
 # pre-commit
 
 1. pip install pre-commit
@@ -30,6 +32,12 @@ repos:
     rev: v2.16.0b0
     hooks:
     -   id : pylint
+        args:
+            ["--ignored-modules=ruamel.yaml"]
+-   repo: https://github.com/charliermarsh/ruff-pre-commit.git
+    rev: v0.0.236
+    hooks:
+    -   id: ruff
 -   repo: https://github.com/psf/black
     rev: 22.12.0
     hooks:
@@ -48,3 +56,10 @@ repos:
 3. pre-commit install - *git hook scripts*
 4. git add files !!!
 5. pre-commit run --all-files *or just commit...*
+
+---
+
+# pipreqs
+
+1. pip install pipreqs
+2. run pipreqs --force . - make requirements.txt for all .py files in current directory, force option to overwrite existing file
