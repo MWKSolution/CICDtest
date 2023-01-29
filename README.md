@@ -20,37 +20,39 @@ repos:
 -   repo: https://github.com/PyCQA/docformatter.git
     rev: v1.5.1
     hooks:
-    -   id: docformatter
+    -   id: docformatter  # formats docstrings to follow PEP 257
 -   repo: https://github.com/hadialqattan/pycln.git
     rev: v2.1.3
     hooks:
-    -   id: pycln
+    -   id: pycln  # finding and removing unused import statements
 -   repo: https://github.com/PyCQA/flake8.git
     rev: 6.0.0
     hooks:
-    -   id: flake8
+    -   id: flake8  # enforcing style consistency
 -   repo: https://github.com/PyCQA/pylint.git
     rev: v2.16.0b0
     hooks:
-    -   id : pylint
-        args: ["--ignored-modules=yaml,dotenv,PyYAML"]
+    -   id : pylint # linter
+        args: ["--disable=import-error"]
+        # ignore import errors if you don't want to download additional dependencies to local but still want to use pylint
 -   repo: https://github.com/charliermarsh/ruff-pre-commit.git
     rev: v0.0.236
     hooks:
-    -   id: ruff
+    -   id: ruff  # extremely fast Python linting
 -   repo: https://github.com/psf/black
     rev: 22.12.0
     hooks:
-    -   id: black
+    -   id: black  # the uncompromising Python code formatter
 -   repo: https://github.com/pre-commit/mirrors-mypy.git
     rev: v0.991
     hooks:
-    -   id: mypy
-        additional_dependencies: [types-PyYAML==6.0.12.3]
+    -   id: mypy  # static type checker for Python
+        additional_dependencies: [types-PyYAML==6.0.12.3]  # import types-PyYAML for proper PyYAML(yaml) import
 -   repo: https://github.com/PyCQA/bandit.git
     rev: 1.7.4
     hooks:
-    -   id: bandit
+    -   id: bandit  # tool for finding common security issues in Python code
+        args: ["-x", "test_*.py"]  # supress B101 assert error in tests
 ```
 [Supported hooks](https://pre-commit.com/hooks.html)
 
