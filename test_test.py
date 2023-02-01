@@ -14,11 +14,13 @@ def test_always_pass():
     assert True
 
 
-def test_my_foo():
+def test_my_foo(four):
     """Test my_foo."""
-    assert my_foo(four()) == 7
+    arg = four
+    assert my_foo(arg) == 7
 
 
-def test_function():
+def test_function(four):
     """Test function."""
-    assert function(3, four()) == 7
+    arg2 = four
+    assert function(3, arg2) == 7

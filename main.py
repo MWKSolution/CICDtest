@@ -1,6 +1,5 @@
 """Sample program that does nothing special to test CICD pipline."""
 import os
-import sys
 from dotenv import load_dotenv
 from yaml import safe_load
 
@@ -17,11 +16,11 @@ def my_foo(foo_x: int) -> int:
 
 def function(arg_a: float, arg_b: float) -> float:
     """Function."""
-    print("Hello CICD")
     return arg_a + arg_b
 
 
 if __name__ == "__main__":
+    print("Hello CICD")
     print(function(1, 2))
     print(LOGIN, PASSWD)
     with open(".pre-commit-config.yaml", encoding="utf-8") as yaml_file:
@@ -29,4 +28,3 @@ if __name__ == "__main__":
 
     for r in data["repos"]:
         print(r["hooks"][0]["id"])
-    sys.exit("OK")

@@ -11,25 +11,29 @@ repos:
     rev: 6.0.0
     hooks:
     -   id: flake8  # enforcing style consistency
+        args: [--max-line-length=120]
 -   repo: https://github.com/PyCQA/pylint.git
     rev: v2.16.0b0
     hooks:
     -   id : pylint # linter
+        exclude: ^test*
         args: ["--disable=import-error"]
         # ignore import errors if you don't want to download additional dependencies to local but still want to use pylint
 -   repo: https://github.com/charliermarsh/ruff-pre-commit.git
     rev: v0.0.236
     hooks:
     -   id: ruff  # extremely fast Python linting
+        args: [--line-length=120]
 -   repo: https://github.com/psf/black
     rev: 22.12.0
     hooks:
     -   id: black  # the uncompromising Python code formatter
+        args: [--line-length=120]
 -   repo: https://github.com/pre-commit/mirrors-mypy.git
     rev: v0.991
     hooks:
     -   id: mypy  # static type checker for Python
-        additional_dependencies: [types-PyYAML==6.0.12.3]  # import types-PyYAML for proper PyYAML(yaml) import
+        additional_dependencies: [types-PyYAML==6.0.12.3, types-requests==2.28.11.8]  # import types-PyYAML for proper PyYAML(yaml) import
 -   repo: https://github.com/PyCQA/bandit.git
     rev: 1.7.4
     hooks:
