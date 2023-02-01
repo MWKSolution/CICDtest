@@ -12,6 +12,8 @@ JENKINS_PASSWD = os.environ.get("JENKINS_PASSWD", default="")
 
 def get_crumb_data_for_pycharm(jenkins_url: str, jenkins_login: str, jenkins_passwd: str) -> str:
     """Use GET to get crumb data."""
+    if not (JENKINS_URL and JENKINS_LOGIN and JENKINS_PASSWD):
+        return "Environmental variables not set!"
     auth = HTTPBasicAuth(jenkins_login, jenkins_passwd)
     params = {"tree": "crumb"}
     jenkins_path = "/".join(["http:/", jenkins_url, "crumbIssuer/api/json"])
