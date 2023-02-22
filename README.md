@@ -11,18 +11,23 @@
 
 # pre-commit
 
-1. **pip install pre-commit**
-2. *create file* **.pre-commit-config.yaml**
+> 1. **pip install pre-commit**
+>2. *create file* **.pre-commit-config.yaml**
 
-[Supported hooks](https://pre-commit.com/hooks.html)
+>[Supported hooks](https://pre-commit.com/hooks.html)
 
-3. **pre-commit install** - *git hook scripts*
-4. *git add files !!!*
-5. **pre-commit run --all-files** *or just commit...*
+>3. **pre-commit install** - *git hook scripts*
+>4. *git add files !!!*
+>5. **pre-commit run --all-files** *or just commit...*  (-a)
+
+
+>6. **pre-commit autoupdate** - update repos
 
 ---
 
 # pipreqs
 
-1. **pip install pipreqs**
-2. *run* **pipreqs --force .** *- make requirements.txt for all .py files in current directory, force option to overwrite existing file,* **--print** *- to see only in terminal*
+>1. **pip install pipreqs**
+
+>2. *run* **pipreqs --encoding utf-8 --force --ignore .\tests\ .** *-  
+    make requirements.txt for all .py files in current directory, force option to overwrite existing file,* **--print** *- to see only in terminal*
