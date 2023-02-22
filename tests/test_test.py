@@ -1,6 +1,6 @@
 """Testing main."""
 import pytest
-from main import my_foo, function
+from package.functions import my_foo, function
 
 
 @pytest.fixture

@@ -2,22 +2,12 @@
 import os
 from dotenv import load_dotenv
 from yaml import safe_load
+from package.functions import function
 
 
 load_dotenv()
 LOGIN = os.environ.get("LOGIN")
 PASSWD = os.environ.get("PASSWD")
-
-
-def my_foo(foo_x: int) -> int:
-    """Foo."""
-    return foo_x + 3
-
-
-def function(arg_a: float, arg_b: float) -> float:
-    """Function."""
-    return arg_a + arg_b
-
 
 if __name__ == "__main__":
     print("Hello CICD")
